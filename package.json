@@ -19,5 +19,8 @@
     "test": "cucumber-js",
     "format": "prettier --write \"src/**/*.ts\"",
     "fizzbuzz": "node src/fizzBuzz/fizzBuzz.js"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
   }
 }

@@ -1,4 +1,3 @@
-
 /**
  * Location class
  * A way to localize on planet earth, like GPS coordinates for example.
