@@ -1,0 +1,20 @@
+{
+  "fleet-1": {
+    "id": "fleet-1",
+    "vehicles": {
+      "Vehicle-1": {
+        "name": "Vehicle-1",
+        "location": null
+      }
+    }
+  },
+  "fleet-2": {
+    "id": "fleet-2",
+    "vehicles": {
+      "Vehicle-1": {
+        "name": "Vehicle-1",
+        "location": null
+      }
+    }
+  }
+}

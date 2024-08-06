@@ -7,6 +7,7 @@
   "devDependencies": {
     "@cucumber/cucumber": "^10.8.0",
     "@types/cucumber": "^7.0.0",
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.1.0",
     "@typescript-eslint/eslint-plugin": "^8.0.1",
     "prettier": "^3.3.3",
@@ -21,6 +22,7 @@
     "fizzbuzz": "node src/fizzBuzz/fizzBuzz.js"
   },
   "dependencies": {
-    "commander": "^12.1.0"
+    "commander": "^12.1.0",
+    "fs-extra": "^11.2.0"
   }
 }

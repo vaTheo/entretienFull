@@ -1,4 +1,4 @@
-import { Given, When, Then } from '@cucumber/cucumber';
+import { Given, When, Then, BeforeAll, AfterAll } from '@cucumber/cucumber';
 import { strict as assert } from 'assert';
 import { Fleet } from '../../Domain/fleet';
 import { Vehicle } from '../../Domain/vehicle';
@@ -6,6 +6,8 @@ import { Location } from '../../Domain/location';
 import { RegisterVehicleCommand, RegisterVehicleCommandHandler } from '../../App/registerVehicleCommand';
 import { ParkVehicleCommand, ParkVehicleCommandHandler } from '../../App/parkVehicleCommand';
 import { FleetRepository } from '../../Infra/fleetRepository';
+import * as fs from 'fs-extra';
+import * as path from 'path';
 
 let fleet: Fleet;
 let anotherFleet: Fleet;
@@ -23,29 +25,35 @@ const VEHICLE2_NAME: string = 'Vehicle-2';
 const LATITUDE: number = 15;
 const LONGITUDE: number = 150;
 
-/*
- * Common steps definition
- */
-Given('my fleet', function () {
+const TEST_JSON_PATH = path.join(__dirname, 'fleets.json');
+
+BeforeAll(async () => {
+  // Ensure we start with a clean state
+  await fs.remove(TEST_JSON_PATH);
+});
+
+AfterAll(async () => {
+  // Clean up after all tests
+  await fs.remove(TEST_JSON_PATH);
+});
+
+Given('my fleet', async function () {
   fleetRepository = new FleetRepository();
   fleet = new Fleet(FLEET1_NAME);
-  fleetRepository.save(fleet);
+  await fleetRepository.save(fleet);
   registerVehicleCommandHandler = new RegisterVehicleCommandHandler(fleetRepository);
   parkVehicleCommandHandler = new ParkVehicleCommandHandler(fleetRepository);
 });
 
-Given('the fleet of another user', function () {
+Given('the fleet of another user', async function () {
   anotherFleet = new Fleet(FLEET2_NAME);
-  fleetRepository.save(anotherFleet);
+  await fleetRepository.save(anotherFleet);
 });
 
 Given('a vehicle', function () {
   vehicle = new Vehicle(VEHICLE1_NAME);
 });
 
-/**
- * Register Vehicle steps definition
- */
 Given('I have registered this vehicle into my fleet', async function () {
   const command = new RegisterVehicleCommand(fleet.Id, vehicle.VehicleName);
   await registerVehicleCommandHandler.handle(command);
@@ -80,9 +88,6 @@ Then('I should be informed this this vehicle has already been registered into my
   assert(error.message.includes('This vehicle is already registered in this fleet'));
 });
 
-/**
- * Park Vehicle steps definition
- */
 Given('a location', function () {
   location = new Location(LATITUDE, LONGITUDE);
 });
