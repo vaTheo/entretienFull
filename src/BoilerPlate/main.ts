@@ -2,19 +2,19 @@
 // import { Fleet } from "./Domain/fleet";
 // import { FleetRepository } from "./Infra/fleetRepository";
 
-import { Fleet } from "./Domain/fleet";
-import { Location } from "./Domain/location";
-import { Vehicle } from "./Domain/vehicle";
+import { Fleet } from './Domain/fleet';
+import { Location } from './Domain/location';
+import { Vehicle } from './Domain/vehicle';
 
 // async function main() {
 //     // Setup
 //     const fleetRepository = new FleetRepository();
 //     const registerVehicleHandler = new RegisterVehicleHandler(fleetRepository);
-  
+
 //     // Create a fleet first (assuming you have a method for this)
 //     const fleet = new Fleet('fleet123');
 //     await fleetRepository.save(fleet);
-  
+
 //     // Now try to register a vehicle
 //     try {
 //       await registerVehicleHandler.execute('fleet123', 'ABC123', 'Parking Lot A');
@@ -22,16 +22,13 @@ import { Vehicle } from "./Domain/vehicle";
 //     } catch (e) {
 //       console.error('Error registering vehicle:', e);
 //     }
-  
+
 //     // Verify the vehicle was added
 //     const updatedFleet = await fleetRepository.findById('fleet123');
 //     console.log('Updated fleet:', updatedFleet);
 //   }
-  
+
 //   main().catch(console.error);
-
-
-
 
 // src/test-script.ts
 

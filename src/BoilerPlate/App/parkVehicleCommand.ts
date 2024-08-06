@@ -6,7 +6,7 @@ export class ParkVehicleCommand {
     public readonly fleetId: string,
     public readonly vehicleName: string,
     public readonly latitude: number,
-    public readonly longitude: number
+    public readonly longitude: number,
   ) {
     this.validation();
   }

@@ -6,10 +6,6 @@ export class RegisterVehicleCommand {
     public readonly fleetId: string,
     public readonly vehicleName: string,
   ) {
-    this.validation();
-  }
-
-  validation() {
     if (!this.fleetId) {
       throw new Error('Fleet id cannot be empty');
     }

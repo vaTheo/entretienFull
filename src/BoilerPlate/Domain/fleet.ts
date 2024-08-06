@@ -1,5 +1,9 @@
 import { Vehicle } from './vehicle';
 
+/**
+ * Fleet class
+ * A collection a distinct vehicles.
+ */
 export class Fleet {
   private vehicles: Map<string, Vehicle> = new Map();
 

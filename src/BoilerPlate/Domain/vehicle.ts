@@ -1,12 +1,15 @@
-import { Location } from "./location";
-
+import { Location } from './location';
+/**
+ * Vehicle class
+ * a car, truck, motocycle, or any transportation mode that can help
+ * me to move from point A to point B on planet earth.
+ */
 export class Vehicle {
   constructor(private vehicleName: string) {
     this.Validation();
   }
 
   private location: Location | null = null;
-
 
   Validation() {
     if (!this.vehicleName) {

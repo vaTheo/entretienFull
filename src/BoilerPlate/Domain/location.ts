@@ -1,12 +1,17 @@
+
+/**
+ * Location class
+ * A way to localize on planet earth, like GPS coordinates for example.
+ */
 export class Location {
   constructor(
     private latitude: number,
     private longitude: number,
   ) {
-    this.validateCooedinate();
+    this.Validation();
   }
 
-  private validateCooedinate() {
+  private Validation() {
     if (!this.latitude && !this.longitude) {
       throw new Error('Location cannot be empty');
     }
@@ -33,5 +38,4 @@ export class Location {
   isSameLocation(newLocation: Location): boolean {
     return this.latitude === newLocation.latitude && this.longitude === newLocation.longitude;
   }
-
 }
