@@ -16,7 +16,6 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
     "test": "cucumber-js",
     "format": "prettier --write \"src/**/*.ts\"",
     "fizzbuzz": "node src/fizzBuzz/fizzBuzz.js"

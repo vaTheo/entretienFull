@@ -38,7 +38,7 @@ export class FleetRepository {
               fleet.registerVehicle(vehicle);
             });
             return [id, fleet];
-          })
+          }),
         );
       }
     } catch (error) {

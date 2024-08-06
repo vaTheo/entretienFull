@@ -9,7 +9,7 @@ I have used Prettier to make the code more consistent throughout the codebase.
 
 To persist the data, I use a JSON file because it seems to be a lightweight solution and faster to implement than using any ORM framework. For a larger project and to improve maintainability, I would have used Prisma.js with a PostgreSQL database. With that solution, it would be easier to create relationships between database datas.
 
-### CLI Fleet Management
+### CLI Fleet Management 
 ```shell
 ./fleet create <fleetId> 
 ./fleet register-vehicle <fleetId> <vehiclePlateNumber>
@@ -17,7 +17,9 @@ To persist the data, I use a JSON file because it seems to be a lightweight solu
 ```
 
 ### Test
-Use yarn test to run the Cucumber tests.
+Use "yarn build" to build the project into JS 
+Use "yarn test" to run the Cucumber tests.
+
 
 ## Setting Up a Better Project
 To set up a better project, I would have at least three branches in my GitHub repository:
